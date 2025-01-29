@@ -1,0 +1,254 @@
+/* General Styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #070708;
+  color: #fff;
+  padding: 1rem;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.auth-buttons .btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-btn {
+  background-color: #0056b3;
+  color: white;
+}
+
+.signup-btn {
+  background-color: white;
+  color: #007bff;
+}
+
+/* Search Bar */
+.search-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.search-container input {
+  width: 60%;
+  max-width: 600px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+}
+
+.search-container input::placeholder {
+  color: #ccc;
+}
+
+.search-container input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+/* Responsive Carousel */
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background-color: #f7f7f7;
+  padding: 20px 0;
+}
+
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 10px;
+  padding: 1rem;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+}
+
+.carousel-slide {
+  display: flex;
+  gap: 10px;
+}
+
+.carousel img {
+  width: 100%;
+  height: 400px; /* Adjust this value as needed */
+  object-fit: contain; /* Ensure the image fits within the space without cropping */
+  border-radius: 10px;
+  scroll-snap-align: center;
+  display: none; /* Hide all images by default */
+}
+
+.carousel img.active {
+  display: block; /* Show the active image */
+}
+
+/* Make carousel fully responsive */
+@media (max-width: 768px) {
+  .carousel {
+    scroll-snap-type: none; /* Allows smooth scrolling on mobile */
+    overflow-x: scroll;
+  }
+
+  .carousel img {
+    height: 200px; /* Adjust this value as needed for smaller screens */
+  }
+}
+
+/* Trending Products */
+.trending-products {
+  padding: 2rem 1rem;
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+.trending-products h2 {
+  color: black;
+}
+
+/* Responsive Product Grid */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adapts dynamically */
+  gap: 1.5rem;
+  margin-top: 1rem;
+  padding: 0 1rem;
+}
+
+/* Product Card */
+.product-card {
+  background: white;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive Image Handling */
+.product-card img {
+  width: 100%;
+  height: auto;
+  max-height: 180px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+/* Product Details */
+.product-details {
+  color: black;
+  font-size: 14px;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.product-details h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.product-details p {
+  margin: 5px 0;
+}
+
+/* Our Vision */
+.our-vision {
+  padding: 2rem 1rem;
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+}
+
+/* Footer */
+.footer {
+  background-color: #343a40;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+.footer-links a {
+  margin: 0 10px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* Desktop Responsiveness */
+@media (min-width: 1024px) {
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .search-container input {
+    width: 40%;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .product-card img {
+    max-height: 200px;
+  }
+}
+
+/* Mobile & Tablet Responsiveness */
+@media (max-width: 1024px) {
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .auth-buttons {
+    margin-top: 10px;
+  }
+
+  .search-container input {
+    width: 90%;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+
+  .product-card img {
+    max-height: 150px;
+  }
+}
